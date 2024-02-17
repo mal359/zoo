@@ -16,7 +16,7 @@ Adapted from "ar" archiver written by Haruhiko Okumura.
 /* uchar should be 8 bits or more */
 /* typedef unsigned char  uchar;   -- already in zoo.h */
 
-#ifndef _SYS_TYPES_H_
+#if ! defined(_SYS_TYPES_H) || defined(__CYGWIN__)
 typedef unsigned int   uint;    /* 16 bits or more */
 typedef unsigned short ushort;  /* 16 bits or more */
 typedef unsigned long  ulong;   /* 32 bits or more */
@@ -52,7 +52,8 @@ typedef T_UINT16		  t_uint16;	/* exactly 16 bits */
 /* ar.c */
 
 extern int unpackable;
-extern ulong origsize, compsize;
+extern ulong origsize;
+extern ulong compsize;
 
 /* all the prototypes follow here for all files */
 
