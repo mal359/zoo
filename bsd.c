@@ -56,7 +56,7 @@ Date and time functions are standard UNIX-style functions.
 /* Standard UNIX-specific file attribute routines */
 #include "nixmode.i"
 
-#if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__) || defined(linux)
+#if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__) || defined(__DragonFly__) || defined(__MidnightBSD__) || defined(__linux__)
 #include <unistd.h>
 #else
 #ifndef SEEK_CUR
